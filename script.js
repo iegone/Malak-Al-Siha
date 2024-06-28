@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const selectedTime = selectedTimeInput.value;
       document.getElementById("confirmation").innerHTML = `<div class="invoice">
       <div class="header">
-        <img src="logo.jpeg" alt="" />
+        <img src="./src/logo.jpeg" alt="" />
 
         <div>
           <h1> <span>تم الحجز</span>  <br></h1>
