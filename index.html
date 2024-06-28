@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عيادة ملاك الصحة</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="hiro">
+        <h2>مرحبـــــا بكم في عيادة</h2>
+        <h2>مـــــــــــلاك الصحـــــــــــــة</h2>
+        <p>علاج بالاعشاب الطبيعية وعلاج بالقران الكريم</p>
+        <img src="hiro.png" alt="عيادة ملاك الصحة" />
+      </div>
+      <div class="booking">
+        <div class="progress">
+          <ul class="progress-steps">
+            <li class="step active">
+              <span>1</span>
+              <p>المعلومات الشخصية</p>
+            </li>
+            <li class="step">
+              <span>2</span>
+              <p>اختر التاريخ</p>
+            </li>
+            <li class="step">
+              <span>3</span>
+              <p>اختر الوقت</p>
+            </li>
+          </ul>
+        </div>
+        <div id="step-1" class="step active">
+          <input
+            placeholder="الإسم"
+            type="text"
+            name="name"
+            id="name"
+            required
+          />
+          <input
+            placeholder="الرقم"
+            type="text"
+            name="number"
+            id="number"
+            required
+          />
+          <button class="next-btn" onclick="showStep(2)">التالي</button>
+        </div>
+
+        <div id="step-2" class="step">
+          <div class="calendar-container">
+            <div class="month">
+              <span class="prev" onclick="prevMonth()">&#10094;</span>
+              <span id="month-year"></span>
+              <span class="next" onclick="nextMonth()">&#10095;</span>
+            </div>
+            <div class="weekdays">
+              <div>الأحد</div>
+              <div>الاثنين</div>
+              <div>الثلاثاء</div>
+              <div>الأربعاء</div>
+              <div>الخميس</div>
+              <div>الجمعة</div>
+              <div>السبت</div>
+            </div>
+            <div class="days"></div>
+          </div>
+          <input type="hidden" id="selectedDate" />
+          <button
+            class="next-btn"
+            id="nextBtnStep1"
+            onclick="showStep(3)"
+            disabled
+          >
+            التالي
+          </button>
+        </div>
+        <div id="step-3" class="step">
+          <div class="time-container">
+            <h3>اختر الوقت</h3>
+            <div class="time-slots">
+              <div class="time-slot" data-time="4:00">4:00</div>
+              <div class="time-slot" data-time="4:30">4:30</div>
+              <div class="time-slot" data-time="5:00">5:00</div>
+              <div class="time-slot" data-time="5:30">5:30</div>
+              <div class="time-slot" data-time="6:00">6:00</div>
+              <div class="time-slot" data-time="6:30">6:30</div>
+              <div class="time-slot" data-time="7:00">7:00</div>
+              <div class="time-slot" data-time="7:30">7:30</div>
+            </div>
+          </div>
+          <input type="hidden" id="selectedTime" />
+          <button
+            class="next-btn"
+            id="nextBtnStep2"
+            onclick="showStep(4)"
+            disabled
+          >
+            التالي
+          </button>
+        </div>
+        <div id="step-4" class="step">
+          <div id="confirmation"></div>
+          <button class="next-btn" onclick="confirmBooking()">
+            طباعه الايصال
+          </button>
+        </div>
+      </div>
+      <footer>
+        <p>
+          الموقع العياده المعبيله شارع النور في نفس بناية المروج للتسوق الشقة
+          رقم 25 طابق 2
+        </p>
+        <p>رقم الاستقبال:97786614</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

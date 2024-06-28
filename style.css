@@ -1,0 +1,327 @@
+:root {
+  --main-color: #0eb300;
+  --secend-color: #da0b0b;
+  --white: white;
+  --gray: #d9d9d9;
+  --lighter-color: #f0f0f0;
+  --border: 12px;
+  --progress: 50px;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: A google;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 90%;
+  max-width: 1200px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border);
+}
+.hiro {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("batern.png") var(--main-color) no-repeat center center;
+  background-size: cover;
+  padding: 20px;
+  text-align: center;
+  border-radius: 0 var(--border) var(--border) 0;
+}
+.hiro h2 {
+  font-size: 45px;
+  margin: 10px 0;
+  color: var(--white);
+}
+.hiro h2:nth-child(2) {
+  background: var(--secend-color);
+  color: var(--white);
+  padding: 0 10px;
+}
+.hiro p {
+  font-size: larger;
+  color: var(--white);
+}
+.hiro img {
+  max-height: 450px;
+  margin-top: 20px;
+}
+.booking {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+.booking h2 {
+  font-size: 55px;
+  margin-bottom: 20px;
+}
+.booking p {
+  /* color: var(--gray); */
+  margin-bottom: 20px;
+
+}
+.booking input,
+.booking button {
+  height: 60px;
+  width: 100%;
+  max-width: 450px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.booking input {
+  border: 3px solid var(--main-color);
+  text-align: right;
+  padding: 12px;
+  border-radius: var(--border);
+}
+.booking button {
+  border: none;
+  background: var(--main-color);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 20px;
+}
+.progress-steps .step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.step {
+  display: none;
+}
+.step.active {
+  display: block;
+  &:nth-child(1) {
+    display: flex;
+  }
+}
+.calendar-container,
+.time-container {
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+}
+.calendar-container .month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--main-color);
+  color: var(--white);
+  padding: 10px;
+}
+.calendar-container .weekdays,
+.calendar-container .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  /* gap: 10px; */
+}
+.calendar-container .weekdays div,
+.calendar-container .days div {
+  text-align: center;
+  padding: 10px;
+}
+.calendar-container .days div.active {
+  background-color: var(--main-color);
+  color: var(--white);
+  border-radius: 50px;
+}
+.calendar-container .days div.prev-date,
+.calendar-container .days div.next-date {
+  color: var(--gray);
+}
+.time-container .time-slots {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.time-container .time-slot {
+  background-color: var(--lighter-color);
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.time-container .time-slot.selected {
+  background-color: var(--main-color);
+  color: var(--white);
+}
+.progress {
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 20px;
+}
+.progress-steps {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 50px;
+}
+.progress-steps li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.progress-steps li > span {
+  width: var(--progress);
+  height: var(--progress);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--lighter-color);
+  border: 4px solid var(--main-color);
+}
+.progress-steps li.active > span {
+  color: white;
+  background: var(--main-color);
+}
+.progress-steps li p {
+  margin-top: 10px;
+  font-size: 12px;
+  width: 50px;
+  color: var(--gray);
+}
+
+.invoice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: #0eb300 solid 2px; */
+  border-radius: var(--border);
+  max-width: 430px;
+  padding: 10px;
+
+  & .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    text-align: right;
+    & img {
+      aspect-ratio: 1/1;
+      width: 100px;
+    }
+    & h1 {
+      padding: 0;
+    }
+    & div {
+      margin-right: 20px;
+    }
+  }
+  & hr {
+    display: block;
+    width: 100%;
+  }
+  & span {
+    color: #0eb300;
+  }
+  & .table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 20px;
+    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    & table {
+      text-align: left;
+      display: flex;
+      max-width: 450px;
+    }
+    & td {
+      padding-left: 10px;
+    }
+
+    & .rtl {
+      text-align: center;
+      border: 1px solid black;
+      padding: 5px;
+      border-radius: 5px;
+      padding-inline: 30px;
+    }
+  }
+  & p {
+    margin-top: 20px;
+  }
+}
+
+footer {
+  display: none;
+}
+
+@media (max-width: 1032px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .hiro,
+  .booking {
+    width: 100%;
+  }
+  .hiro {
+    padding: 10px;
+    border-radius: 0;
+  }
+  .booking {
+    padding: 10px;
+  }
+  .hiro h2,
+  .booking h2 {
+    font-size: 35px;
+  }
+  .hiro img {
+    display: none;
+  }
+}
+@media print {
+  button {
+    display: none;
+  }
+  .progress-steps {
+    display: none;
+  }
+
+  footer {
+    height: 80px;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    background: var(--main-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 10px;
+    & p {
+      font-size: 15px;
+    }
+  }
+  
+}
