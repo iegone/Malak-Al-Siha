@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.confirmBooking = () => {
     // alert("تم تأكيد الحجز بنجاح!");
-    window.print(".invoice");
+    window.print();
 
     // Reset form
     document.getElementById("name").value = "";
