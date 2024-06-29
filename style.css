@@ -343,4 +343,7 @@ footer {
     display: flex;
     
   }
+  img{
+    display: none;
+  }
 }
