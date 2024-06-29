@@ -106,7 +106,48 @@
           </button>
         </div>
         <div id="step-4" class="step">
-          <div id="confirmation"></div>
+          <div id="confirmation">
+            <div class="invoice">
+      <div class="header">
+        <img src="./src/logo.jpeg" alt="" />
+
+        <div>
+          <h1> <span>تم الحجز</span>  <br></h1>
+
+        </div>
+      </div>
+      <hr>
+      <div class="table-container">
+        <table>
+          <tr>
+            <td class="rtl">${name}</td>
+            <td>:الاسـم</td>
+          </tr>
+
+          <tr>
+            <td class="rtl">${phone}</td>
+            <td>:الـرقم</td>
+          </tr>
+
+          <tr>
+            <td class="rtl">${selectedDate}</td>
+            <td>:التاريخ</td>
+          </tr>
+
+          <tr>
+            <td class="rtl">${selectedTime}</td>
+            <td>:الوقت</td>
+          </tr>
+        </table>
+        
+        
+        </div>
+        <hr>
+        <p>نتوقع من حضراتكم القدوم قبل الميعاد ب ١٠ دقائق علي الاقل</p>
+        
+
+    </div>
+          </div>
           <button class="next-btn" onclick="confirmBooking()">
             طباعه الايصال
           </button>
