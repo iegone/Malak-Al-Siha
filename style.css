@@ -7,11 +7,15 @@
   --border: 12px;
   --progress: 40px;
 }
+ @font-face {
+            font-family: 'A-Google';
+            src: url('/A-Google.ttf') format('truetype');
+        }
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: A-Google
 }
 body {
   height: 100vh;
@@ -326,10 +330,10 @@ footer {
   /* font-weight: bold; */
 }
 .calendar-container{
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 }
-/* 
+
 @media print {
 
   #step-1,
@@ -348,23 +352,5 @@ footer {
     
     display: flex;
     
-  }
-} */
-
-@media print {
-  body * {
-    visibility: hidden;
-  }
-  .invoice, .invoice * {
-    visibility: visible;
-  }
-  .invoice {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 148mm; /* A5 width */
-    height: 210mm; /* A5 height */
-    margin: 0;
-    padding: 0;
   }
 }
