@@ -117,50 +117,49 @@ document.addEventListener("DOMContentLoaded", function () {
       const phone = document.getElementById("number").value;
       const selectedDate = selectedDateInput.value;
       const selectedTime = selectedTimeInput.value;
-      document.getElementById("confirmation").innerHTML = `<div class="invoice">
-      <div class="header">
-        <img src="./src/logo.jpeg" alt="" />
-
-        <div>
-          <h1> <span>تم الحجز</span>  <br></h1>
-
+      document.getElementById("confirmation").innerHTML = `<div class="invoice" style="display: flex; flex-direction: column; align-items: center; border-radius: var(--border); max-width: 430px; padding: 10px;">
+        <div class="header" style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 100px; text-align: right;">
+            <img src="./src/logo.jpeg" alt="" style="aspect-ratio: 1/1; width: 100px;" />
+            <div style="margin-right: 20px;">
+                <h1 style="padding: 0;"><span style="color: #0eb300;">تم الحجز</span><br></h1>
+            </div>
         </div>
-      </div>
-      <hr>
-      <div class="table-container">
-        <table>
-          <tr>
-            <td class="rtl">${name}</td>
-            <td>:الاسـم</td>
-          </tr>
-
-          <tr>
-            <td class="rtl">${phone}</td>
-            <td>:الـرقم</td>
-          </tr>
-
-          <tr>
-            <td class="rtl">${selectedDate}</td>
-            <td>:التاريخ</td>
-          </tr>
-
-          <tr>
-            <td class="rtl">${selectedTime}</td>
-            <td>:الوقت</td>
-          </tr>
-        </table>
-        
-        
+        <hr style="display: block; width: 100%;">
+        <div class="table-container" style="display: flex; flex-direction: column; align-items: center; margin-block: 20px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+            <table style="text-align: left; display: flex; max-width: 450px;">
+                <tr>
+                    <td class="rtl" style="text-align: center; border: 1px solid black; padding: 5px; border-radius: 5px; padding-inline: 30px;">${name}</td>
+                    <td>:الاسـم</td>
+                </tr>
+                <tr>
+                    <td class="rtl" style="text-align: center; border: 1px solid black; padding: 5px; border-radius: 5px; padding-inline: 30px;">${phone}</td>
+                    <td>:الـرقم</td>
+                </tr>
+                <tr>
+                    <td class="rtl" style="text-align: center; border: 1px solid black; padding: 5px; border-radius: 5px; padding-inline: 30px;">${selectedDate}</td>
+                    <td>:التاريخ</td>
+                </tr>
+                <tr>
+                    <td class="rtl" style="text-align: center; border: 1px solid black; padding: 5px; border-radius: 5px; padding-inline: 30px;">${selectedTime}</td>
+                    <td>:الوقت</td>
+                </tr>
+            </table>
         </div>
-        <hr>
-        <p>نتوقع من حضراتكم القدوم قبل الميعاد ب ١٠ دقائق علي الاقل</p>
-
+        <hr style="display: block; width: 100%;">
+        <p style="margin-top: 20px;">نتوقع من حضراتكم القدوم قبل الميعاد ب ١٠ دقائق علي الاقل</p>
     </div>`;
     }
   };
 
+  function confirmBooking() {
+    window.print();
+  }
+
+  document.getElementById("confirmBookingButton").addEventListener("click", confirmBooking);
+
   window.confirmBooking = () => {
     // alert("تم تأكيد الحجز بنجاح!");
+    
     window.print();
 
     // Reset form
