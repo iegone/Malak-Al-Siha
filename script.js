@@ -41,7 +41,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fill in current month's days
     for (let i = 1; i <= lastDate; i++) {
-      daysEl.innerHTML += `<div>${i}</div>`;
+      const currentDate = new Date(year, month, i);
+      const dayClass =
+        currentDate.getDay() === 5 || currentDate.getDay() === 6
+          ? "disabled"
+          : ""; // Disable Friday (5) and Saturday (6)
+      daysEl.innerHTML += `<div class="${dayClass}">${i}</div>`;
     }
 
     // Fill in next month's days to complete the grid
@@ -55,7 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
       day.addEventListener("click", function () {
         if (
           this.classList.contains("prev-date") ||
-          this.classList.contains("next-date")
+          this.classList.contains("next-date") ||
+          this.classList.contains("disabled")
         )
           return;
         days.forEach((d) => d.classList.remove("active"));
@@ -162,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.confirmBooking = () => {
     // alert("تم تأكيد الحجز بنجاح!");
-    
+
     window.print();
 
     // Reset form

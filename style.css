@@ -308,7 +308,8 @@ body {
 }
 
 .invoice p {
-  margin-top: 20px;
+  margin-top: 10px;
+  font-size: 12px;
 }
 
 footer {
@@ -375,6 +376,9 @@ footer p {
   .calendar-container {
     margin-bottom: 40px;
   }
+}
+.calendar-container .days div.disabled{
+  color: var(--gray);
 }
 
 @media print {
