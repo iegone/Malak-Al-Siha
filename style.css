@@ -310,11 +310,9 @@ footer {
 }
 }
 @media print {
-
   #step-1,
   #step-2,
-  #step-3
-  {
+  #step-3 {
     display: none;
   }
   button {
@@ -340,5 +338,40 @@ footer {
     & p {
       font-size: 15px;
     }
+  }
+
+  .invoice {
+    width: 100%;
+    max-width: 100%;
+    padding: 5px;
+    font-size: 12px; /* تعديل حجم الخط */
+  }
+
+  .invoice .header {
+    flex-direction: column; /* تعديل الاتجاه */
+    align-items: flex-start;
+    & img {
+      width: 50px; /* تعديل حجم الصورة */
+    }
+    & h1 {
+      font-size: 18px; /* تعديل حجم الخط */
+    }
+    & div {
+      margin-right: 0;
+    }
+  }
+
+  .invoice .table-container {
+    & table {
+      width: 100%;
+      max-width: 100%;
+    }
+    & td {
+      padding: 5px; /* تعديل التباعد */
+    }
+  }
+
+  .invoice p {
+    margin-top: 10px; /* تعديل التباعد */
   }
 }
