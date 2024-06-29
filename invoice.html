@@ -4,8 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      @media print {button {display: none;}}
+    </style>
   </head>
-  <body>
+  <body style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+      ">
     <div
       class="invoice"
       style="
@@ -119,7 +128,9 @@
       <p style="margin-top: 20px">
         نتوقع من حضراتكم القدوم قبل الميعاد ب ١٠ دقائق علي الاقل
       </p>
+
     </div>
+    <button  onclick="confirmBooking()">طباعة</button>
     <script>
       function confirmBooking() {
         window.print();
