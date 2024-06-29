@@ -270,6 +270,21 @@ body {
 
 footer {
   display: none;
+   height: 80px;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    background: var(--main-color);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 10px;
+    & p {
+      font-size: 15px;
+    }
+  
 }
 
 @media (max-width: 1032px) {
@@ -324,20 +339,8 @@ footer {
   }
 
   footer {
-    height: 80px;
-    position: absolute;
-    width: 100%;
-    bottom: 0px;
-    background: var(--main-color);
-    color: white;
+    
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding-top: 10px;
-    & p {
-      font-size: 15px;
-    }
+    
   }
 }
