@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم في الحجوزات</title>
+  <link rel="stylesheet" href="dashboard-style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="date-picker-container">
+      <span class="navigation-arrow" id="prevMonth">&#10094;</span>
+      <input type="date" id="datePicker">
+      <span class="navigation-arrow" id="nextMonth">&#10095;</span>
+    </div>
+    <h2 id="bookingsDate">جدول الحجوزات</h2>
+    <div class="bookings-table-container">
+      <table id="bookingsTable">
+        <thead>
+          <tr>
+            <th>الاسم</th>
+            <th>الرقم</th>
+            <th>الوقت</th>
+            <th>الإجراءات</th>
+          </tr>
+        </thead>
+        <tbody id="bookingsList">
+          <!-- الحجوزات سيتم ادراجها هنا -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="dashboard-script.js"></script>
+</body>
+</html>
